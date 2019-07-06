@@ -17,7 +17,7 @@ module.exports = [
         "name": "Calling Collect",
         "price": 8.08,
         "image": "assets/images/collect.jpg",
-        "artist": "Reminds Me of John Nespeca"
+        "artist": "Emmeric"
     },
     {
         "name": "This Is Your God",
