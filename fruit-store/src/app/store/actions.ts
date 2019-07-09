@@ -22,10 +22,6 @@ export class AddToCart implements Action {
     constructor(public payload: Product) {}
 }
 
-export class GetItems implements Action {
-    readonly type = ActionTypes.LoadItems;
-}
-
 export class RemoveFromCart implements Action {
     readonly type = ActionTypes.Remove;
 
@@ -33,9 +29,13 @@ export class RemoveFromCart implements Action {
 }
 
 export class LoadItems implements Action {
+    readonly type = ActionTypes.LoadItems;
+}
+
+export class LoadSuccess implements Action {
     readonly type = ActionTypes.LoadSuccess;
 
     constructor(public payload: Product[]) {}
 }
 
-export type ActionsUnion = AddToCart | RemoveFromCart | LoadItems | GetItems;
+export type ActionsUnion = AddToCart | RemoveFromCart | LoadItems | LoadSuccess;
