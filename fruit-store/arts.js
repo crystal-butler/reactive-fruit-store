@@ -1,4 +1,4 @@
-// fruits.js
+// arts.js
 
 module.exports = [
     {
