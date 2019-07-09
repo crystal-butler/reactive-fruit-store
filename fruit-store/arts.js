@@ -1,4 +1,6 @@
 // arts.js
+// module.exports.stringProperty = "NodeJS, huh?";
+// console.log(module);
 
 module.exports = [
     {

@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 
 const app = express();
 const port = process.env.PORT || 4000;
-const fruits = require('./fruits');
+const arts = require('./arts');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -18,6 +18,12 @@ app.use((req, res, next) => {
     next();
 });
 
-app.get('/fruits', (req, res) => {
+console.log(`arts is ${arts} in server.js`);
+
+app.get('/arts', (req, res) => {
+    res.json(arts);
+});
+
+app.listen(port, () => {
     console.log(`Server started on port ${port}`);
 });

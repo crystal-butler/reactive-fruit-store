@@ -28,14 +28,14 @@ export class RemoveFromCart implements Action {
     constructor(public payload: Product) {}
 }
 
-export class LoadItems implements Action {
+export class GetItems implements Action {
     readonly type = ActionTypes.LoadItems;
 }
 
-export class LoadSuccess implements Action {
+export class LoadItems implements Action {
     readonly type = ActionTypes.LoadSuccess;
 
     constructor(public payload: Product[]) {}
 }
 
-export type ActionsUnion = AddToCart | RemoveFromCart | LoadItems | LoadSuccess;
+export type ActionsUnion = AddToCart | RemoveFromCart | LoadItems | GetItems;

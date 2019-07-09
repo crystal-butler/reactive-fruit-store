@@ -10,6 +10,7 @@ export const initialState = {
 export function ShopReducer(state = initialState, action: ActionsUnion) {
     switch (action.type) {
         case ActionTypes.LoadSuccess:
+            console.log(`items should be ${action.payload}`);
             return {
                 ...state,
                 items: [...action.payload]

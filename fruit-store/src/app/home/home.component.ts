@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
-import { LoadItems } from '../store/actions';
+import { GetItems } from '../store/actions';
 import { Product } from '../product/product.component';
 
 @Component({
@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   items: Product[] = [];
 
   ngOnInit() {
-    this.store.dispatch(new LoadItems());
+    this.store.dispatch(new GetItems());
   }
 
 }
