@@ -23,9 +23,9 @@
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     margin: 0 15px 30px 0;
-    width: 286px;
-    max-height: 400px;
-    height: 320px;
+    width: 320px;
+    max-height: 420px;
+    // height: 240px;
 
     &:hover {
         transform: scale(1.05);
@@ -38,12 +38,13 @@
 
     &-image {
         max-width: 100%;
-        width: 300px;
+        width: 320px;
         border-top-right-radius: 5px;
         border-top-left-radius: 5 px;
-        height: 300px;
-        object-fit: cover;
+        height: 240px;
+        object-fit: contain;
     }
+
     &-details {
         display:flex;
         justify-content: space-between;
@@ -53,6 +54,12 @@
             font-weight: 500;
             opacity: 0.7;
             letter-spacing: 1px;
+            margin: 0;
+        }
+
+        &-name {
+            font-weight: 500;
+            opacity: 0.7;
             margin: 0;
         }
     }
@@ -72,6 +79,11 @@
         padding: 0 15px;
 
         &__add {
+            @extend %button;
+            border: 2px solid rgb(52, 186, 219);
+        }
+
+        &__remove {
             @extend %button;
             border: 2px solid indianred;
         }
