@@ -10,12 +10,16 @@ import { HeaderComponent } from './header/header.component';
 
 import { ShopReducer } from './store/reducer';
 import {ShopEffects } from './store/effects';
+import { ProductComponent } from './product/product.component';
+import { ProductListComponent } from './product-list/product-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    ProductComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,
