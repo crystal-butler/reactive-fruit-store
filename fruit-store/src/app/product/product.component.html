@@ -1,4 +1,4 @@
-// src/app/product/product.component.html
+<!--/product.component.html-->
 
 <div class="product">
     <div class="product-image-holder">
@@ -14,14 +14,14 @@
     <div class="product-actions">
         <button
             class="product-actions__add"
-            (click)="addToCart(product"
+            (click)="addToCart(product)"
             *ngIf="!inCart"
         >
             <img src="/assets/images/add-to-cart.png" alt="add to cart" />
         </button>
         <button
             class="product-actions__remove"
-            (click)="removeFromCart(product"
+            (click)="removeFromCart(product)"
             *ngIf="inCart"
         >
         <img src="/assets/images/remove-from-cart.png" alt="remove from cart" />

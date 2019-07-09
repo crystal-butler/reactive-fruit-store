@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { select, Store } from '@ngrx/store';
+import { LoadItems } from '../store/actions';
+import { Product } from '../product/product.component';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private store: Store<{ items: Product[]; cart: []}>) {
+    store.pipe(select('shop')).subscribe(data => (this.items = data.items));
+  }
+
+  items: Product[] = [];
 
   ngOnInit() {
+    this.store.dispatch(new LoadItems());
   }
 
 }
