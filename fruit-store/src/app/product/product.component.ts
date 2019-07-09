@@ -1,4 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+// src/app/product/product.component.ts
+
+import { Component, Input, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { AddToCart, RemoveFromCart } from '../store/actions';
+
+export interface Product {
+  name: string;
+  price: number;
+  artist: string;
+  image: string;
+}
 
 @Component({
   selector: 'app-product',
@@ -7,7 +18,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductComponent implements OnInit {
 
-  constructor() { }
+  constructor(private store: Store<{ items: []; cart: []}>) { }
+
+  inCart = false;
+  @Input() product: Product;
+
+  addToCart(item: Product) {
+    this.store.dispatch(new AddToCart(item));
+    this.inCart = true;
+  }
+
+  removeFromCart(item: Product) {
+    this.store.dispatch(new RemoveFromCart(item));
+    this.inCart = false;
+  }
 
   ngOnInit() {
   }
